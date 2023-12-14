@@ -7,20 +7,31 @@ on:
 jobs:
   build:
    runs-on: ubuntu-latest
-   name: Checking Repo
+   name: Install NodeJs
 
 
-   
    steps:
-     - name : Checkout Code
+     - name: Checkout Code
        uses: actions/checkout@v4
 
-     - name: listing files
-       run: |
-        ls ${{ github.workspace }}
+     - name: Setup Node
+       uses: actions/setup-node@4.0.0
+       with:
+          node-version: 20
 
-     - name: Additional Command
-       run: |
-          echo "Hello Github actions"
-          echo "I am Achanandhi"
+
+     - name: Install Express
+       uses: prafulla-codes/express-autodocs@v0.0.2
+
+  test-app:
+       runs-on: ubuntu-latest
+       name: Simple test
+       steps:
+         - name: Testing
+           run: echo "Running a Test"
    
+       
+       
+       
+
+     
