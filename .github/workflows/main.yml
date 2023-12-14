@@ -1,0 +1,26 @@
+name: Nodejs Setup
+
+on:  
+   push:
+      branches: [ "main" ]
+
+jobs:
+  build:
+   runs-on: ubuntu-latest
+   name: Checking Repo
+
+
+   
+   steps:
+     - name : Checkout Code
+       uses: actions/checkout@v4
+
+     - name: listing files
+       run: |
+        ls ${{ github.workspace }}
+
+     - name: Additional Command
+       run: |
+          echo "Hello Github actions"
+          echo "I am Achanandhi"
+   
