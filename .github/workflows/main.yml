@@ -21,12 +21,20 @@ jobs:
 
      - name: Checking Installed Node version
        run: |
-          echo "node -v"
-          echo "npm -v"
-
+           node -v
+           npm -v
 
      - name: Install Express
        uses: prafulla-codes/express-autodocs@v0.0.2
+
+     - name: Install jq
+       run: sudo apt-get install jq
+
+     - name: Checking Installed Express version
+       run: |
+          echo "Express version:"
+          cat package.json | jq -r '.dependencies.express'
+
 
   test-app:
        runs-on: ubuntu-latest
