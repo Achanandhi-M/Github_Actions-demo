@@ -19,6 +19,11 @@ jobs:
        with:
           node-version: 20
 
+     - name: Checking Installed Node version
+       run: |
+          echo "node -v"
+          echo "npm -v"
+
 
      - name: Install Express
        uses: prafulla-codes/express-autodocs@v0.0.2
