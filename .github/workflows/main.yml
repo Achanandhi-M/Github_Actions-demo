@@ -23,6 +23,8 @@ jobs:
        run: |
            node -v
            npm -v
+           node init -y
+           npm install Express
 
      - name: Install Express
        uses: prafulla-codes/express-autodocs@v0.0.2
